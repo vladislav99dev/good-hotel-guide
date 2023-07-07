@@ -1,0 +1,41 @@
+@font-face {
+  font-family: Gibson-Bold;
+  src: url("../assets/fonts/Gibson-Bold.otf");
+}
+
+@font-face {
+  font-family: Gibson-SemiBold;
+  src: url("../assets/fonts/Gibson-SemiBold.otf");
+}
+
+@font-face {
+  font-family: Gibson-Regular;
+  src: url("../assets/fonts/Gibson-Regular.otf");
+}
+
+@font-face {
+  font-family: Gibson-Light;
+  src: url("../assets/fonts/Gibson-Light.otf");
+}
+
+@font-face {
+  font-family: Gill-Sans-Nova-SemiBold;
+  src: url("../assets/fonts/Gill-Sans-Nova-SemiBold.ttf");
+}
+
+.Gibson-Bold {
+  font-family: Gibson-Bold;
+}
+
+.Gibson-SemiBold {
+  font-family: Gibson-SemiBold;
+}
+.Gibson-Regular {
+  font-family: Gibson-Regular;
+}
+.Gibson-Light {
+  font-family: Gibson-Light;
+}
+.Gill-Sans-Nova-SemiBold {
+  font-family: Gill-Sans-Nova-SemiBold;
+}
