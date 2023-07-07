@@ -77,7 +77,7 @@ const Login = () => {
                 </div>
                 <div className="flex flex-col gap-y-4 mb-28">
                     <h3 className="text-center Gill-Sans-Nova-SemiBold text-4xl">Log In</h3>
-                    <p className="text-center Gibson-Light text-primary-two-clr">Don't have an account? <Link className="underline text-custom-purple" href={"/register"}>Create an account.</Link></p>
+                    <p className="text-center Gibson-Light text-primary-two-clr">Don&apos;t have an account? <Link className="underline text-custom-purple" href={"/register"}>Create an account.</Link></p>
                 </div>
                 <form onSubmit={handleSubmit} className="bg-[#FAFAFA] flex flex-col p-10 gap-y-6 relative">
                     <div className={`text-center absolute top-2  left-1/2 translate-x-[-50%] -z-10 ${formData.validationMessage.value && "!-top-10"}  text-red-500`}>{formData.validationMessage.message}</div>
