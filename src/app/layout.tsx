@@ -6,10 +6,6 @@ import store from "@/store/store";
 import Header from "@/components/Header";
 import InitialUserLoad from "@/components/InitialUserLoad"
 
-export const metadata = {
-  title: "GHGV2",
-  description: "development",
-};
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
