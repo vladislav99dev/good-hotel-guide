@@ -5,9 +5,9 @@ import useTypedStoreAction from "@/store/hooks/useTypedStoreAction";
 import { SearchForm as SearchParams } from "@/store/slices/dashboardSearchSlice/interfaces";
 import { searchFormDataActions } from "@/store/store";
 import { getInitialHotelData } from "@/store/slices/initialHotelDataSlice";
-import HotelDashboard from "@/components/HotelDashboard";
-import DashboardWelcomeMessage from "@/components/DashboardWelcomeMessage";
-import DashboardSerchBar from "@/components/DashboardSearchBar/index"
+import HotelDashboard from "@/components/Dashboard/HotelDashboard";
+import DashboardWelcomeMessage from "@/components/Dashboard/DashboardWelcomeMessage";
+import DashboardSerchBar from "@/components/Dashboard/DashboardSearchBar/index"
 import Pagination from "@/components/UI/pagination";
 import { PageGuard } from "@/HOC/routeGuard";
 

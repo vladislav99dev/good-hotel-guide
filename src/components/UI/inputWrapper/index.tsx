@@ -1,21 +1,27 @@
-import { InputProps } from "../input"
+import Input, { InputProps } from "../input"
 import Label, { LabelProps } from "../label"
-import Input from "@/components/UI/input/index"
+import Select, { SelectProps } from "../select"
+import TextArea, { TextAreaProps } from "../textarea"
 
-interface InputWrapperProps {
-    inputProps: InputProps,
+interface FormFieldsWrapper {
+    inputProps?: InputProps,
+    selectProps?: SelectProps
+    textareaProps?: TextAreaProps
     labelProps: LabelProps,
     wrapperStyles?: string,
 }
 
 
-const InputWrapper = ({ inputProps, labelProps, wrapperStyles }: InputWrapperProps) => {
+const FormFieldsWrapper = ({ inputProps, labelProps, wrapperStyles, selectProps, textareaProps }: FormFieldsWrapper) => {
     return (
-            <div className={`flex flex-col gap-y-2 Gibson-Light ${wrapperStyles && wrapperStyles}`}>
-                <Label {...labelProps} />
-                <Input {...inputProps} />
-            </div>
+        <div className={`flex flex-col gap-y-2 Gibson-Light ${wrapperStyles && wrapperStyles}`}>
+            <Label {...labelProps} />
+            {inputProps && <Input {...inputProps} />}
+            {textareaProps && <TextArea {...textareaProps} />}
+            {selectProps && <Select {...selectProps} />}
+
+        </div>
     )
 }
 
-export default InputWrapper
+export default FormFieldsWrapper

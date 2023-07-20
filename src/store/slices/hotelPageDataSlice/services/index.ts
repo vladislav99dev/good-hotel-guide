@@ -30,7 +30,35 @@ const checkForHotelDataService = async (
     const response = await axios.post<CheckForDraftServiceResponse>(
       `https://${process.env.NEXT_PUBLIC_SANITY_ID}.api.sanity.io/${process.env.NEXT_PUBLIC_API_VERSION}/data/query/${process.env.NEXT_PUBLIC_DATASET_NAME}`,
       {
-        query: `*[_id == "${id.type}${id.value}"]`,
+        query: `*[_id == "${id.type}${id.value}"]{
+          location,
+          _updatedAt,
+          slug,
+          searchTagSummaries,
+          _rev,
+          hotelInformation,
+          _id,
+          seoGroup,
+          _type,
+          reviewTextAndMedia{homepageFeaturedImage { _key,_type,asset->{ url,_ref,_type } }, reviewSummary,reviewFull,images[] {
+            _key,
+            _type,
+            asset->{
+              url,
+              _ref,
+              _type
+            }
+          }},
+          parentPage,
+          _createdAt,
+          name,
+          questionnaireTab,
+          addressGroup,
+          management,
+          attractions,
+          contactGroup,
+          displayOptions
+        }`,
       },
       {
         headers: {
@@ -39,7 +67,6 @@ const checkForHotelDataService = async (
         },
       }
     );
-
     return response.data.result;
   } catch (e) {
     const error = e as AxiosError;

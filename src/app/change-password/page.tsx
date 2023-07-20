@@ -7,7 +7,7 @@ import { CognitoUser } from 'amazon-cognito-identity-js'
 import UserPool from '@/UserPool'
 import { PasswordIcon, UserIcon } from '@/assets/icons/icons1'
 import Modal from "@/components/UI/modal/index"
-import InputWrapper from '@/components/UI/inputWrapper'
+import FormFieldsWrapper from '@/components/UI/inputWrapper'
 import tempLogoImage from "@/assets/img/tempLogoImage.png"
 
 
@@ -97,7 +97,7 @@ const ChangePassword = () => {
                     </div>
                     {formData.step === 1 && (
                         <>
-                            <InputWrapper
+                            <FormFieldsWrapper
                                 labelProps={{ htmlFor: "email", text: "Email" }}
                                 inputProps={{ onChangeHandler: onChangeHandler, type: "text", id: "email", name: "email", customStyles: `px-10 ${formData.email.length === 0 && formData.firstSubmit && "border-red-500"}`, icon: <UserIcon /> }}
                                 wrapperStyles='min-w-[350px]'
@@ -107,14 +107,14 @@ const ChangePassword = () => {
                     )}
                     {formData.step === 2 && (
                         <>
-                            <InputWrapper
+                            <FormFieldsWrapper
                                 labelProps={{ htmlFor: "code", text: "Verification Code" }}
                                 inputProps={{ onChangeHandler: onChangeHandler, type: "text", id: "code", name: "code", customStyles: `px-10 ${formData.code.length === 0 && formData.firstSubmit && "border-red-500"}` }}
                                 wrapperStyles='min-w-[350px]'
                             />
                             <div>
 
-                                <InputWrapper
+                                <FormFieldsWrapper
                                     labelProps={{ htmlFor: "password", text: "New Pasword" }}
                                     inputProps={{ onChangeHandler: onChangeHandler, type: "password", id: "password", name: "password", customStyles: `px-10  ${!formData.password.isValidated && formData.firstSubmit && "border-red-500"}`, icon: <PasswordIcon />, isPassword: true }}
                                     wrapperStyles='min-w-[350px]'
@@ -124,7 +124,7 @@ const ChangePassword = () => {
                             </div>
                             <div>
 
-                                <InputWrapper
+                                <FormFieldsWrapper
                                     labelProps={{ htmlFor: "confrimPassword", text: "Confirm Password" }}
                                     inputProps={{ onChangeHandler: onChangeHandler, type: "password", id: "confirmPassword", name: "confirmPassword", customStyles: `px-10 ${!formData.confirmPassword.isValidated && formData.firstSubmit && "border-red-500"}`, icon: <PasswordIcon />, isPassword: true }}
                                     wrapperStyles='min-w-[350px]'

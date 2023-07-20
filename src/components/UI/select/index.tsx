@@ -1,18 +1,18 @@
 import React from 'react'
 
-interface SelectProps {
+export interface SelectProps {
     options: { value: string, label: String }[],
     placeholder: string,
     customStyles: string,
     name: string,
     value: string,
-    onChangeHandler?: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+    onChangeHandler?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
 const Select = ({ options, customStyles, placeholder, onChangeHandler, name, value }: SelectProps) => {
     return (
-        <select className={`${customStyles} border-[1px] h-[48px] border-[rgba(224, 224, 224, 1)] text-[#9E9E9E] px-2`}
-            value={value.length > 0 ? value : placeholder}
+        <select className={`${customStyles} border-[1px] h-[48px] border-[rgba(224, 224, 224, 1)]  px-2`}
+            defaultValue={value?.length > 0 ? value : placeholder}
             onChange={onChangeHandler}
             name={name}
         >
